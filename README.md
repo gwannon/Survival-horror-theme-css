@@ -3,7 +3,7 @@
 This is a theme in CSS3 to simulate survival horror effects.
 
 # Examples
-* All resources https://theflash.gwannon.com/Cyberpunk-2077-theme-css/test.html
+* All resources https://theflash.gwannon.com/Survival-horror-theme-css/test.html
 * Bloody filling https://codepen.io/gwannon/pen/YzGQJYp
 
 # Recomended fonts
