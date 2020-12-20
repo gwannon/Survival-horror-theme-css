@@ -1,5 +1,5 @@
 :root {
-  --duration: 2s;
+  --duration: 1s;
   --color-blood: #8a0303;
   --color-blood-light: #cc1212;
   --color-light-steel: #595D61;
@@ -380,14 +380,17 @@ h2.survival.bleeding ~ *:nth-child(2):not(.survival),
 h3.survival.bleeding ~ *:nth-child(2):not(.survival),
 h4.survival.bleeding ~ *:nth-child(2):not(.survival) {
   --drop-width: 1rem;
-  background: -webkit-radial-gradient(#fff 0%, #fff 100%);
+  --drop-form: ellipse;
+  --color-transparent: #fff;
+  background: -webkit-radial-gradient(var(--color-transparent) 0%, var(--color-transparent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation-name: bloodsoaking;
-  animation-duration: calc(var(--duration) * 10);
+  animation-duration: calc(var(--duration) * 20);
   animation-delay: calc(var(--duration) * 0.5);
-  animation-iteration-count: infinite;
+  /*animation-iteration-count: infinite;*/
   animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 h2.survival.bleeding ~ *:nth-child(2):not(.survival) {
@@ -402,59 +405,118 @@ h4.survival.bleeding ~ *:nth-child(2):not(.survival) {
   --drop-width: 0.2rem;
 }
 
+@media only screen and (max-width: 600px) {
+  h1.survival.bleeding ~ *:nth-child(2):not(.survival),
+  h2.survival.bleeding ~ *:nth-child(2):not(.survival),
+  h3.survival.bleeding ~ *:nth-child(2):not(.survival),
+  h4.survival.bleeding ~ *:nth-child(2):not(.survival) {
+    --drop-form: circle;
+  }
+}
+
 @keyframes bloodsoaking {
   0% {
-    background: -webkit-radial-gradient(#fff 0%, #fff 100%);
+    background: -webkit-radial-gradient(var(--color-transparent) 0%, var(--color-transparent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  5% {
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 0%,var(--color-transparent) 5%, var(--color-transparent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   10% {
-    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)5%,#fff 10%, #fff 100%);
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 5%,var(--color-transparent) 10%, var(--color-transparent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  15% {
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 10%,var(--color-transparent) 15%, var(--color-transparent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   20% {
-    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)15%,#fff 20%, #fff 100%);
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 15%,var(--color-transparent) 20%, var(--color-transparent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  25% {
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 20%,var(--color-transparent) 25%, var(--color-transparent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   30% {
-    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)25%,#fff 30%, #fff 100%);
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 25%,var(--color-transparent) 30%, var(--color-transparent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  35% {
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 30%,var(--color-transparent) 35%, var(--color-transparent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   40% {
-    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)35%,#fff 40%, #fff 100%);
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 35%,var(--color-transparent) 40%, var(--color-transparent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  45% {
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 40%,var(--color-transparent) 45%, var(--color-transparent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   50% {
-    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)45%,#fff 50%, #fff 100%);
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 45%, var(--color-transparent) 50%, var(--color-transparent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  55% {
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 50%, var(--color-transparent) 55%, var(--color-transparent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   60% {
-    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)55%,#fff 60%, #fff 100%);
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 55%, var(--color-transparent) 60%, var(--color-transparent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  65% {
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 60%, var(--color-transparent) 65%, var(--color-transparent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   70% {
-    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)65%,#fff 70%, #fff 100%);
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 65%, var(--color-transparent) 70%, var(--color-transparent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  75% {
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 70%, var(--color-transparent) 75%, var(--color-transparent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   80% {
-    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)75%,#fff 80%, #fff 100%);
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 75%, var(--color-transparent) 80%, var(--color-transparent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  85% {
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 80%, var(--color-transparent) 85%, var(--color-transparent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   90% {
-    background: radial-gradient(ellipse at 0% 50%, var(--color-blood)0%, var(--color-blood)85%,#fff 90%, #fff 100%);
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 85%, var(--color-transparent) 90%, var(--color-transparent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  95% {
+    background: radial-gradient(var(--drop-form) at 0% calc(var(--drop-width) * 2), var(--color-blood) 0%, var(--color-blood) 90%, var(--color-transparent) 95%, var(--color-transparent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   100% {
-    background: radial-gradient(ellipse at 0% 50%, var(--color-blood)0%, var(--color-blood)100%);
+    background: radial-gradient(var(--drop-form) at 0% 50%, var(--color-blood) 0%, var(--color-blood) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
