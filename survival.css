@@ -26,7 +26,7 @@ section.survival {
 }
 
 section.survival > * {
-  color: var(--color-blood);
+  color: #fff;
 }
 
 section.survival.blood {
