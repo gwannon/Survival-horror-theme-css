@@ -6,6 +6,7 @@ This is a theme in CSS3 to simulate survival horror effects.
 * All resources https://theflash.gwannon.com/Survival-horror-theme-css/test.html
 * Bloody filling https://codepen.io/gwannon/pen/YzGQJYp
 * Bleeding titles https://codepen.io/gwannon/pen/qBaXEKL
+* Circular blades and jaws https://codepen.io/gwannon/pen/YzGxNGr
 
 # Recomended fonts
 * Creepster https://fonts.googleapis.com/css2?family=Creepster&display=swap
