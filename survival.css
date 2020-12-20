@@ -1,4 +1,5 @@
 :root {
+  --duration: 2s;
   --color-blood: #8a0303;
   --color-blood-light: #cc1212;
   --color-light-steel: #595D61;
@@ -306,7 +307,6 @@ h2.survival.bleeding,
 h3.survival.bleeding,
 h4.survival.bleeding {
   --drop-width: 1rem;
-  --duration: 2s;
   color: var(--color-blood);
   font-size: 2rem;
   letter-spacing: 1px;
@@ -370,11 +370,92 @@ h4.survival.bleeding:after {
   }
 
   100% {
-    top: calc(200% - 0.2rem);
+    top: calc(100% + (var(--drop-width) * 2));
     transform: scale(1);
   }
 }
 
-h1.survival.bleeding:before {
+h1.survival.bleeding ~ *:nth-child(2):not(.survival),
+h2.survival.bleeding ~ *:nth-child(2):not(.survival),
+h3.survival.bleeding ~ *:nth-child(2):not(.survival),
+h4.survival.bleeding ~ *:nth-child(2):not(.survival) {
+  --drop-width: 1rem;
+  background: -webkit-radial-gradient(#fff 0%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: bloodsoaking;
+  animation-duration: calc(var(--duration) * 10);
+  animation-delay: calc(var(--duration) * 0.5);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
 
+h2.survival.bleeding ~ *:nth-child(2):not(.survival) {
+  --drop-width: 0.7rem;
+}
+
+h3.survival.bleeding ~ *:nth-child(2):not(.survival) {
+  --drop-width: 0.4rem;
+}
+
+h4.survival.bleeding ~ *:nth-child(2):not(.survival) {
+  --drop-width: 0.2rem;
+}
+
+@keyframes bloodsoaking {
+  0% {
+    background: -webkit-radial-gradient(#fff 0%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  10% {
+    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)5%,#fff 10%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  20% {
+    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)15%,#fff 20%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  30% {
+    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)25%,#fff 30%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  40% {
+    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)35%,#fff 40%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  50% {
+    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)45%,#fff 50%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  60% {
+    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)55%,#fff 60%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  70% {
+    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)65%,#fff 70%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  80% {
+    background: radial-gradient(ellipse at 0% calc(var(--drop-width) * 2), var(--color-blood)0%, var(--color-blood)75%,#fff 80%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  90% {
+    background: radial-gradient(ellipse at 0% 50%, var(--color-blood)0%, var(--color-blood)85%,#fff 90%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: radial-gradient(ellipse at 0% 50%, var(--color-blood)0%, var(--color-blood)100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
